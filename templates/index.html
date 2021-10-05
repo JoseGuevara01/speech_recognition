@@ -3,15 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Speech Recognition in Python</title>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/styles/index.css">
 </head>
 <body>
     <div id="speechContainer">
         <h1>Upload New File</h1>
-        <form method="POST" enctype="multipart/form-data" >
+        <form method="post" enctype="multipart/form-data" >
             <input type='file' name='file' />
             <br>
             <input type='submit' value='Transcribe' />
         </form>
     </div>
+    {% if transcript != "" %}
+    <div id="speechTranscrip">
+        <h1>Transcript</h1>
+        <p>{{transcript}}</p>
+    </div>
+    {% endif %}
 </body>
 </html>
